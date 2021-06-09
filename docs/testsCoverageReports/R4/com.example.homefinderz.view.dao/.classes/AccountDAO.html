@@ -1,0 +1,321 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AccountDAO</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.homefinderz.view.dao</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AccountDAO (com.example.homefinderz.view.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AccountDAO</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    82.6%
+  </span>
+  <span class="absValue">
+    (19/ 23)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    62.4%
+  </span>
+  <span class="absValue">
+    (68/ 109)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.homefinderz.view.dao;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.homefinderz.main.Account;
+<i>4</i>&nbsp;import com.example.homefinderz.main.Listing;
+<i>5</i>&nbsp;import com.example.homefinderz.main.Search;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.util.ArrayList;
+<i>8</i>&nbsp;import java.util.List;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;public class AccountDAO {
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    /**
+<i>13</i>&nbsp;     * Having a different ArrayList for the different kinds of Accounts
+<i>14</i>&nbsp;     * will help during Search.
+<i>15</i>&nbsp;     * You can first search for Listings by premium Users by iterating through
+<i>16</i>&nbsp;     * the List premAccounts
+<i>17</i>&nbsp;     * and then similarly for Listings by free Users with the List freeAccounts.
+<i>18</i>&nbsp;     */
+<b class="fc"><i>19</i>&nbsp;    private static List&lt;Account&gt; freeAccounts = new ArrayList&lt;&gt;();;    //holding all the free accounts</b>
+<b class="fc"><i>20</i>&nbsp;    private static List&lt;Account&gt; premAccounts = new ArrayList&lt;&gt;();;    //holding all the premium accounts</b>
+<i>21</i>&nbsp;
+<b class="fc"><i>22</i>&nbsp;    private static int numOfAccounts = 0;</b>
+<b class="fc"><i>23</i>&nbsp;    private static int numOfListings = 0;</b>
+<b class="fc"><i>24</i>&nbsp;    private static int searchID      = 0;</b>
+<b class="fc"><i>25</i>&nbsp;    private static int accountID     = 0;</b>
+<b class="fc"><i>26</i>&nbsp;    private static int listingID     = 0;</b>
+<i>27</i>&nbsp;
+<b class="fc"><i>28</i>&nbsp;    public AccountDAO() {}</b>
+<i>29</i>&nbsp;
+<b class="fc"><i>30</i>&nbsp;    public int getNumOfAccounts() { return numOfAccounts; }</b>
+<i>31</i>&nbsp;
+<b class="fc"><i>32</i>&nbsp;    public int getNumOfListings() { return numOfListings; }</b>
+<i>33</i>&nbsp;
+<b class="fc"><i>34</i>&nbsp;    public void increaseListingsCount() { numOfListings++; }</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    /**
+<i>37</i>&nbsp;     * For testing purposes.
+<i>38</i>&nbsp;     * We will check if it is increased.
+<i>39</i>&nbsp;     * That would mean a search was created.
+<i>40</i>&nbsp;     */
+<i>41</i>&nbsp;    public static int getSearchID() {
+<b class="fc"><i>42</i>&nbsp;        return searchID;</b>
+<i>43</i>&nbsp;    }
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;    public List&lt;Account&gt; getFreeAccounts() {
+<b class="fc"><i>46</i>&nbsp;        List&lt;Account&gt; result = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>47</i>&nbsp;        result.addAll(freeAccounts);</b>
+<b class="fc"><i>48</i>&nbsp;        return result;</b>
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;    public List&lt;Account&gt; getPremAccounts() {
+<b class="fc"><i>51</i>&nbsp;        List&lt;Account&gt; result = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>52</i>&nbsp;        result.addAll(premAccounts);</b>
+<b class="fc"><i>53</i>&nbsp;        return result;</b>
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    /**
+<i>57</i>&nbsp;     * This is called to store a newly made account to the Database
+<i>58</i>&nbsp;     * @param acc the new account that was created
+<i>59</i>&nbsp;     */
+<i>60</i>&nbsp;    public void add(Account acc) {
+<b class="fc"><i>61</i>&nbsp;        freeAccounts.add(acc);</b>
+<b class="fc"><i>62</i>&nbsp;        numOfAccounts++;</b>
+<i>63</i>&nbsp;
+<b class="fc"><i>64</i>&nbsp;    }</b>
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;    /**
+<i>67</i>&nbsp;     * This is called when a free account is turned to a premium account
+<i>68</i>&nbsp;     * First, we remove the old account from the list of the free accounts
+<i>69</i>&nbsp;     * Then, we call the method makePremium and we add it to the list of premium accounts
+<i>70</i>&nbsp;     * @param acc the account to be upgraded
+<i>71</i>&nbsp;     */
+<i>72</i>&nbsp;    public void upgrade(Account acc) {
+<b class="fc"><i>73</i>&nbsp;        freeAccounts.remove(acc);</b>
+<b class="fc"><i>74</i>&nbsp;        acc.makePremium();</b>
+<b class="fc"><i>75</i>&nbsp;        premAccounts.add(acc);</b>
+<b class="fc"><i>76</i>&nbsp;    }</b>
+<i>77</i>&nbsp;
+<i>78</i>&nbsp;    /**
+<i>79</i>&nbsp;     * This handles the account deletion.
+<i>80</i>&nbsp;     * It checks if the account to be deleted is Premium and it removes it from its respective list.
+<i>81</i>&nbsp;     * @param acc the account to be deleted
+<i>82</i>&nbsp;     */
+<i>83</i>&nbsp;    public void removeAccount(Account acc) {
+<b class="fc"><i>84</i>&nbsp;        if (acc.isPremium()) {</b>
+<b class="fc"><i>85</i>&nbsp;            premAccounts.remove(acc);</b>
+<i>86</i>&nbsp;        }
+<i>87</i>&nbsp;        else {
+<b class="fc"><i>88</i>&nbsp;            freeAccounts.remove(acc);</b>
+<i>89</i>&nbsp;        }
+<b class="fc"><i>90</i>&nbsp;        numOfAccounts--;</b>
+<b class="fc"><i>91</i>&nbsp;    }</b>
+<i>92</i>&nbsp;
+<i>93</i>&nbsp;    /**
+<i>94</i>&nbsp;     * This notifies our database of the changes made to an account
+<i>95</i>&nbsp;     * It checks if the account that has been changed is premium then it iterates
+<i>96</i>&nbsp;     * over the respective list.
+<i>97</i>&nbsp;     *
+<i>98</i>&nbsp;     * When it finds the index of the account&#39;s position in the list, it replaces the
+<i>99</i>&nbsp;     * old version of the account with the new one.
+<i>100</i>&nbsp;     *
+<i>101</i>&nbsp;     * @param acc the changed version of the account.
+<i>102</i>&nbsp;     */
+<i>103</i>&nbsp;    public void update(Account acc) {
+<b class="fc"><i>104</i>&nbsp;        if (acc.isPremium()) {</b>
+<b class="fc"><i>105</i>&nbsp;            for (int i = 0; i &lt; premAccounts.size(); i++) {</b>
+<b class="fc"><i>106</i>&nbsp;                if (premAccounts.get(i).getId() == acc.getId()) {</b>
+<b class="fc"><i>107</i>&nbsp;                    premAccounts.set(i, acc);</b>
+<b class="fc"><i>108</i>&nbsp;                    break;</b>
+<i>109</i>&nbsp;                }
+<i>110</i>&nbsp;            }
+<i>111</i>&nbsp;        }
+<i>112</i>&nbsp;        else {
+<b class="fc"><i>113</i>&nbsp;            for (int i = 0; i &lt; freeAccounts.size(); i++) {</b>
+<b class="fc"><i>114</i>&nbsp;                if (freeAccounts.get(i).getId() == acc.getId()) {</b>
+<b class="fc"><i>115</i>&nbsp;                    freeAccounts.set(i, acc);</b>
+<b class="fc"><i>116</i>&nbsp;                    break;</b>
+<i>117</i>&nbsp;                }
+<i>118</i>&nbsp;            }
+<i>119</i>&nbsp;        }
+<b class="fc"><i>120</i>&nbsp;    }</b>
+<i>121</i>&nbsp;
+<i>122</i>&nbsp;    public Account findAccount(String email) {
+<b class="fc"><i>123</i>&nbsp;        for (Account acc : premAccounts) {</b>
+<b class="fc"><i>124</i>&nbsp;            if (acc.getEmail().equals(email)) {</b>
+<b class="fc"><i>125</i>&nbsp;                return acc;</b>
+<i>126</i>&nbsp;            }
+<b class="fc"><i>127</i>&nbsp;        }</b>
+<b class="fc"><i>128</i>&nbsp;        for (Account acc : freeAccounts) {</b>
+<b class="fc"><i>129</i>&nbsp;            if (acc.getEmail().equals(email)) {</b>
+<b class="fc"><i>130</i>&nbsp;                return acc;</b>
+<i>131</i>&nbsp;            }
+<b class="fc"><i>132</i>&nbsp;        }</b>
+<b class="fc"><i>133</i>&nbsp;        return null;</b>
+<i>134</i>&nbsp;    }
+<i>135</i>&nbsp;    public Account findAccount(int ID) {
+<b class="fc"><i>136</i>&nbsp;        for (Account acc : premAccounts) {</b>
+<b class="fc"><i>137</i>&nbsp;            if (acc.getId() == ID) {</b>
+<b class="fc"><i>138</i>&nbsp;                return acc;</b>
+<i>139</i>&nbsp;            }
+<b class="fc"><i>140</i>&nbsp;        }</b>
+<i>141</i>&nbsp;
+<b class="fc"><i>142</i>&nbsp;        for (Account acc : freeAccounts) {</b>
+<b class="fc"><i>143</i>&nbsp;            if (acc.getId() == ID) {</b>
+<b class="fc"><i>144</i>&nbsp;                return acc;</b>
+<i>145</i>&nbsp;            }
+<b class="fc"><i>146</i>&nbsp;        }</b>
+<b class="fc"><i>147</i>&nbsp;        return null;</b>
+<i>148</i>&nbsp;    }
+<i>149</i>&nbsp;
+<i>150</i>&nbsp;    public int createSearchID() {
+<b class="fc"><i>151</i>&nbsp;        return searchID++;</b>
+<i>152</i>&nbsp;    }
+<i>153</i>&nbsp;    public int createAccountID() {
+<b class="fc"><i>154</i>&nbsp;        return accountID++;</b>
+<i>155</i>&nbsp;    }
+<i>156</i>&nbsp;    public int createListingID() {
+<b class="fc"><i>157</i>&nbsp;        return listingID++;</b>
+<i>158</i>&nbsp;    }
+<i>159</i>&nbsp;
+<i>160</i>&nbsp;    /**
+<i>161</i>&nbsp;     * Find a particular Listing
+<i>162</i>&nbsp;     * @param accountID the id of the account that is currently logged in
+<i>163</i>&nbsp;     * @param listingID the id of the listing the user selected to modify
+<i>164</i>&nbsp;     * @return the Listing that the user wants to modify
+<i>165</i>&nbsp;     */
+<i>166</i>&nbsp;    public Listing findListing(int accountID, int listingID) {
+<b class="fc"><i>167</i>&nbsp;        for (Listing lis: findAccount(accountID).getPublishedListings()) {</b>
+<b class="fc"><i>168</i>&nbsp;            if(lis.getId() == listingID) {</b>
+<b class="fc"><i>169</i>&nbsp;                return lis;</b>
+<i>170</i>&nbsp;            }
+<b class="fc"><i>171</i>&nbsp;        }</b>
+<b class="nc"><i>172</i>&nbsp;        return null;</b>
+<i>173</i>&nbsp;    }
+<i>174</i>&nbsp;
+<i>175</i>&nbsp;    public Listing findListing(int listingID) {
+<b class="nc"><i>176</i>&nbsp;        for (Account account: premAccounts) {</b>
+<b class="nc"><i>177</i>&nbsp;            for(Listing lis: account.getPublishedListings()) {</b>
+<b class="nc"><i>178</i>&nbsp;                if(lis.getId() == listingID) {</b>
+<b class="nc"><i>179</i>&nbsp;                    return lis;</b>
+<i>180</i>&nbsp;                }
+<b class="nc"><i>181</i>&nbsp;            }</b>
+<b class="nc"><i>182</i>&nbsp;        }</b>
+<b class="nc"><i>183</i>&nbsp;        for (Account account: freeAccounts) {</b>
+<b class="nc"><i>184</i>&nbsp;            for(Listing lis: account.getPublishedListings()) {</b>
+<b class="nc"><i>185</i>&nbsp;                if(lis.getId() == listingID) {</b>
+<b class="nc"><i>186</i>&nbsp;                    return lis;</b>
+<i>187</i>&nbsp;                }
+<b class="nc"><i>188</i>&nbsp;            }</b>
+<b class="nc"><i>189</i>&nbsp;        }</b>
+<b class="nc"><i>190</i>&nbsp;        return null;</b>
+<i>191</i>&nbsp;    }
+<i>192</i>&nbsp;
+<i>193</i>&nbsp;    public Search findSearch(int accountID, int searchID) {
+<b class="fc"><i>194</i>&nbsp;        for (Search search: findAccount(accountID).getStoredSearches()) {</b>
+<b class="fc"><i>195</i>&nbsp;            if(search.getSearchId() == searchID) {</b>
+<b class="fc"><i>196</i>&nbsp;                return search;</b>
+<i>197</i>&nbsp;            }
+<b class="nc"><i>198</i>&nbsp;        }</b>
+<b class="nc"><i>199</i>&nbsp;        return null;</b>
+<i>200</i>&nbsp;    }
+<i>201</i>&nbsp;
+<i>202</i>&nbsp;    public void removeListing(int accountID, int lis) {
+<b class="nc"><i>203</i>&nbsp;        Account acc = findAccount(accountID);</b>
+<b class="nc"><i>204</i>&nbsp;        List&lt;Listing&gt; listings = acc.getPublishedListings();</b>
+<b class="nc"><i>205</i>&nbsp;        for(int i = 0; i &lt; listings.size(); i++) {</b>
+<b class="nc"><i>206</i>&nbsp;            if(listings.get(i).getId() == lis) {</b>
+<b class="nc"><i>207</i>&nbsp;                listings.remove(i);</b>
+<b class="nc"><i>208</i>&nbsp;                numOfListings--;</b>
+<b class="nc"><i>209</i>&nbsp;                break;</b>
+<i>210</i>&nbsp;            }
+<i>211</i>&nbsp;        }
+<b class="nc"><i>212</i>&nbsp;        update(acc);</b>
+<b class="nc"><i>213</i>&nbsp;    }</b>
+<i>214</i>&nbsp;
+<i>215</i>&nbsp;    public void removeApproval(int accountID, int listingID) {
+<b class="nc"><i>216</i>&nbsp;        Account acc = findAccount(accountID);</b>
+<b class="nc"><i>217</i>&nbsp;        List&lt;Listing&gt; listings = acc.getApprovedListings();</b>
+<b class="nc"><i>218</i>&nbsp;        for(int i = 0; i &lt; listings.size(); i++) {</b>
+<b class="nc"><i>219</i>&nbsp;            if(listings.get(i).getId() == listingID) {</b>
+<b class="nc"><i>220</i>&nbsp;                listings.remove(i);</b>
+<b class="nc"><i>221</i>&nbsp;                break;</b>
+<i>222</i>&nbsp;            }
+<i>223</i>&nbsp;        }
+<b class="nc"><i>224</i>&nbsp;        update(acc);</b>
+<b class="nc"><i>225</i>&nbsp;    }</b>
+<i>226</i>&nbsp;
+<i>227</i>&nbsp;    public void removeSearch(int accountID, int searchId) {
+<b class="nc"><i>228</i>&nbsp;        Account acc = findAccount(accountID);</b>
+<b class="nc"><i>229</i>&nbsp;        List&lt;Search&gt; storedSearches = acc.getStoredSearches();</b>
+<b class="nc"><i>230</i>&nbsp;        for(int i = 0; i &lt; storedSearches.size(); i++) {</b>
+<b class="nc"><i>231</i>&nbsp;            if(storedSearches.get(i).getSearchId() == searchId) {</b>
+<b class="nc"><i>232</i>&nbsp;                storedSearches.remove(i);</b>
+<b class="nc"><i>233</i>&nbsp;                break;</b>
+<i>234</i>&nbsp;            }
+<i>235</i>&nbsp;        }
+<b class="nc"><i>236</i>&nbsp;        update(acc);</b>
+<b class="nc"><i>237</i>&nbsp;    }</b>
+<i>238</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-06-08 21:04</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ViewListing.ViewListingActivity">
+
+    <TextView
+        android:id="@+id/tv_vl_Price2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_pricr"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_vl_ID2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_ID2" />
+
+    <TextView
+        android:id="@+id/tv_vl_Location2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_location"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_vl_Price2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_Price2" />
+
+    <TextView
+        android:id="@+id/tv_vl_baths2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_baths"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_vl_beds2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_beds2" />
+
+    <TextView
+        android:id="@+id/tv_vl_ID2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/tv_vlid"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_vl_ID"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_Title" />
+
+    <TextView
+        android:id="@+id/tv_vl_desc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_listing_description"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_vl_heating2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_heating2" />
+
+    <TextView
+        android:id="@+id/tv_vl_SQM2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_sqm"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_vl_Location2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_Location2" />
+
+    <TextView
+        android:id="@+id/tv_vl_heating2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/heating"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_vl_floor2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_floor2" />
+
+    <TextView
+        android:id="@+id/tv_vl_floor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_floor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_vl_baths2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_baths2" />
+
+    <TextView
+        android:id="@+id/tv_vl_beds2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_bedrooms"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_vl_SQM2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_SQM2" />
+
+    <TextView
+        android:id="@+id/tv_vl_Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_location"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vl_Price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_Price" />
+
+    <TextView
+        android:id="@+id/tv_vl_baths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_baths"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vl_beds"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_beds" />
+
+    <TextView
+        android:id="@+id/tv_vl_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="14dp"
+        android:text="@string/tv_vlid"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_vl_ID2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_Title" />
+
+    <TextView
+        android:id="@+id/tv_vl_beds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_bedrooms"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vl_SQM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_SQM" />
+
+    <TextView
+        android:id="@+id/tv_vl_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_listing_description"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vl_heating"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_heating" />
+
+    <TextView
+        android:id="@+id/tv_vl_SQM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_sqm"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vl_Location"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_Location" />
+
+    <TextView
+        android:id="@+id/tv_vl_heating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/heating"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vl_floor"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_floor" />
+
+    <TextView
+        android:id="@+id/tv_vl_floor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_floor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vl_baths"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_baths" />
+
+    <TextView
+        android:id="@+id/tv_vl_Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pl_txt_pricr"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vl_ID"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vl_ID" />
+
+    <TextView
+        android:id="@+id/tv_vl_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/listing_details"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

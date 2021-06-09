@@ -1,0 +1,302 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: PublishListingActivity</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.homefinderz.view.publishListing</a> ]
+</div>
+
+<h1>Coverage Summary for Class: PublishListingActivity (com.example.homefinderz.view.publishListing)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PublishListingActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 40)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">PublishListingActivity$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PublishListingActivity$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 44)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.homefinderz.view.publishListing;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import androidx.appcompat.app.AppCompatActivity;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import android.app.AlertDialog;
+<i>6</i>&nbsp;import android.content.Intent;
+<i>7</i>&nbsp;import android.os.Bundle;
+<i>8</i>&nbsp;import android.view.View;
+<i>9</i>&nbsp;import android.widget.Button;
+<i>10</i>&nbsp;import android.widget.CheckBox;
+<i>11</i>&nbsp;import android.widget.EditText;
+<i>12</i>&nbsp;import android.widget.Toast;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;import com.example.homefinderz.R;
+<i>15</i>&nbsp;import com.example.homefinderz.view.Listing.ListingView;
+<i>16</i>&nbsp;
+<b class="nc"><i>17</i>&nbsp;public class PublishListingActivity extends AppCompatActivity implements ListingView {</b>
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    private static final int EMPTY_TEXT_FIELD = -685;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    private PublishListingPresenter presenter;
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    @Override
+<i>24</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>25</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i>26</i>&nbsp;        setContentView(R.layout.activity_publish_listing);</b>
+<i>27</i>&nbsp;
+<b class="nc"><i>28</i>&nbsp;        Button btnConfirm = (Button)findViewById(R.id.btn_plConfirm);</b>
+<b class="nc"><i>29</i>&nbsp;        Button btnCancel =  (Button)findViewById(R.id.btn_plCancel);</b>
+<i>30</i>&nbsp;
+<b class="nc"><i>31</i>&nbsp;        Intent intent = getIntent();</b>
+<b class="nc"><i>32</i>&nbsp;        presenter = new PublishListingPresenter(this);</b>
+<b class="nc"><i>33</i>&nbsp;        presenter.setAccountID(intent.getIntExtra(&quot;accountID&quot;, -1));</b>
+<i>34</i>&nbsp;
+<b class="nc"><i>35</i>&nbsp;        btnConfirm.setOnClickListener(new View.OnClickListener() {</b>
+<i>36</i>&nbsp;            @Override
+<i>37</i>&nbsp;            public void onClick(View view) {
+<b class="nc"><i>38</i>&nbsp;                presenter.createListing();</b>
+<i>39</i>&nbsp;            }
+<i>40</i>&nbsp;        });
+<b class="nc"><i>41</i>&nbsp;        btnCancel.setOnClickListener(new View.OnClickListener() {</b>
+<i>42</i>&nbsp;            @Override
+<i>43</i>&nbsp;            public void onClick(View view) {
+<b class="nc"><i>44</i>&nbsp;                finish();</b>
+<i>45</i>&nbsp;            }
+<i>46</i>&nbsp;        });
+<i>47</i>&nbsp;    }
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;    @Override
+<i>50</i>&nbsp;    public int getPrice() {
+<b class="nc"><i>51</i>&nbsp;        String price = ((EditText)findViewById(R.id.et_plPrice)).getText().toString();</b>
+<b class="nc"><i>52</i>&nbsp;        if (price.equals(&quot;&quot;)) {</b>
+<b class="nc"><i>53</i>&nbsp;            return EMPTY_TEXT_FIELD;</b>
+<i>54</i>&nbsp;        }
+<i>55</i>&nbsp;        else {
+<b class="nc"><i>56</i>&nbsp;            return Integer.parseInt(price);</b>
+<i>57</i>&nbsp;        }
+<i>58</i>&nbsp;    }
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    @Override
+<i>61</i>&nbsp;    public int getSQM() {
+<b class="nc"><i>62</i>&nbsp;        String sqm = ((EditText)findViewById(R.id.et_plSQM)).getText().toString();</b>
+<b class="nc"><i>63</i>&nbsp;        if (sqm.equals(&quot;&quot;)) {</b>
+<b class="nc"><i>64</i>&nbsp;            return EMPTY_TEXT_FIELD;</b>
+<i>65</i>&nbsp;        }
+<i>66</i>&nbsp;        else {
+<b class="nc"><i>67</i>&nbsp;            return Integer.parseInt(sqm);</b>
+<i>68</i>&nbsp;        }
+<i>69</i>&nbsp;    }
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;    @Override
+<i>72</i>&nbsp;    public int getBedrooms() {
+<b class="nc"><i>73</i>&nbsp;        String beds = ((EditText)findViewById(R.id.et_plBedrooms)).getText().toString();</b>
+<b class="nc"><i>74</i>&nbsp;        if (beds.equals(&quot;&quot;)) {</b>
+<b class="nc"><i>75</i>&nbsp;            return EMPTY_TEXT_FIELD;</b>
+<i>76</i>&nbsp;        }
+<i>77</i>&nbsp;        else {
+<b class="nc"><i>78</i>&nbsp;            return Integer.parseInt(beds);</b>
+<i>79</i>&nbsp;        }
+<i>80</i>&nbsp;    }
+<i>81</i>&nbsp;
+<i>82</i>&nbsp;    @Override
+<i>83</i>&nbsp;    public int getBathrooms() {
+<b class="nc"><i>84</i>&nbsp;        String baths = ((EditText)findViewById(R.id.et_plBathrooms)).getText().toString();</b>
+<b class="nc"><i>85</i>&nbsp;        if (baths.equals(&quot;&quot;)) {</b>
+<b class="nc"><i>86</i>&nbsp;            return EMPTY_TEXT_FIELD;</b>
+<i>87</i>&nbsp;        }
+<i>88</i>&nbsp;        else {
+<b class="nc"><i>89</i>&nbsp;            return Integer.parseInt(baths);</b>
+<i>90</i>&nbsp;        }
+<i>91</i>&nbsp;    }
+<i>92</i>&nbsp;
+<i>93</i>&nbsp;    @Override
+<i>94</i>&nbsp;    public int getFloor() {
+<b class="nc"><i>95</i>&nbsp;        String floor = ((EditText)findViewById(R.id.et_plFloor)).getText().toString();</b>
+<b class="nc"><i>96</i>&nbsp;        if (floor.equals(&quot;&quot;)) {</b>
+<b class="nc"><i>97</i>&nbsp;            return EMPTY_TEXT_FIELD;</b>
+<i>98</i>&nbsp;        }
+<i>99</i>&nbsp;        else {
+<b class="nc"><i>100</i>&nbsp;            return Integer.parseInt(floor);</b>
+<i>101</i>&nbsp;        }
+<i>102</i>&nbsp;    }
+<i>103</i>&nbsp;
+<i>104</i>&nbsp;    @Override
+<i>105</i>&nbsp;    public boolean getHeating() {
+<b class="nc"><i>106</i>&nbsp;        return ((CheckBox)findViewById(R.id.checkBox_plHeating)).isChecked();</b>
+<i>107</i>&nbsp;    }
+<i>108</i>&nbsp;
+<i>109</i>&nbsp;    @Override
+<i>110</i>&nbsp;    public String getLocation() {
+<b class="nc"><i>111</i>&nbsp;        return ((EditText)findViewById(R.id.et_plLocation)).getText().toString();</b>
+<i>112</i>&nbsp;    }
+<i>113</i>&nbsp;
+<i>114</i>&nbsp;    @Override
+<i>115</i>&nbsp;    public String getDescription() {
+<b class="nc"><i>116</i>&nbsp;        return ((EditText)findViewById(R.id.et_plDescription)).getText().toString();</b>
+<i>117</i>&nbsp;    }
+<i>118</i>&nbsp;
+<i>119</i>&nbsp;    @Override
+<i>120</i>&nbsp;    public void showErrorMessage(String title, String message) {
+<b class="nc"><i>121</i>&nbsp;        new AlertDialog.Builder(PublishListingActivity.this)</b>
+<b class="nc"><i>122</i>&nbsp;                .setCancelable(true)</b>
+<b class="nc"><i>123</i>&nbsp;                .setTitle(title)</b>
+<b class="nc"><i>124</i>&nbsp;                .setMessage(message)</b>
+<b class="nc"><i>125</i>&nbsp;                .setPositiveButton(R.string.ok, null).create().show();</b>
+<i>126</i>&nbsp;    }
+<i>127</i>&nbsp;
+<i>128</i>&nbsp;    @Override
+<i>129</i>&nbsp;    public void showSuccessMessage() {
+<b class="nc"><i>130</i>&nbsp;        Toast.makeText(getApplicationContext(),&quot;Listing published!&quot;, Toast.LENGTH_SHORT).show();</b>
+<b class="nc"><i>131</i>&nbsp;        finish();</b>
+<i>132</i>&nbsp;    }
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;    //------------TEST PURPOSES ONLY--------------------------
+<i>135</i>&nbsp;    @Override
+<i>136</i>&nbsp;    public void setPrice(int price) {
+<i>137</i>&nbsp;        //stub for testing purposes
+<i>138</i>&nbsp;    }
+<i>139</i>&nbsp;
+<i>140</i>&nbsp;    @Override
+<i>141</i>&nbsp;    public void setSquareMeters(int squareMeters) {
+<i>142</i>&nbsp;        //stub for testing purposes
+<i>143</i>&nbsp;    }
+<i>144</i>&nbsp;
+<i>145</i>&nbsp;    @Override
+<i>146</i>&nbsp;    public void setBedrooms(int bedrooms) {
+<i>147</i>&nbsp;        //stub for testing purposes
+<i>148</i>&nbsp;    }
+<i>149</i>&nbsp;
+<i>150</i>&nbsp;    @Override
+<i>151</i>&nbsp;    public void setBathrooms(int bathrooms) {
+<i>152</i>&nbsp;        //stub for testing purposes
+<i>153</i>&nbsp;    }
+<i>154</i>&nbsp;
+<i>155</i>&nbsp;    @Override
+<i>156</i>&nbsp;    public void setFloor(int floor) {
+<i>157</i>&nbsp;        //stub for testing purposes
+<i>158</i>&nbsp;    }
+<i>159</i>&nbsp;
+<i>160</i>&nbsp;    @Override
+<i>161</i>&nbsp;    public void setHeating(boolean heating) {
+<i>162</i>&nbsp;        //stub for testing purposes
+<i>163</i>&nbsp;    }
+<i>164</i>&nbsp;
+<i>165</i>&nbsp;    @Override
+<i>166</i>&nbsp;    public void setLocation(String location) {
+<i>167</i>&nbsp;        //stub for testing purposes
+<i>168</i>&nbsp;    }
+<i>169</i>&nbsp;
+<i>170</i>&nbsp;    @Override
+<i>171</i>&nbsp;    public void setDescription(String description) {
+<i>172</i>&nbsp;        //stub for testing purposes
+<i>173</i>&nbsp;    }
+<i>174</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-06-08 21:04</div>
+</div>
+</body>
+</html>

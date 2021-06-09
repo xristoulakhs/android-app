@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.search.SearchActivity">
+
+    <LinearLayout
+        android:id="@+id/sp_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#00B9F7FA"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="148dp">
+
+        <TextView
+            android:id="@+id/sp_txt_appname"
+            android:layout_width="167dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/petrona"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/sp_bt_myProfile"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/my_profile"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="12sp"
+            tools:background="@drawable/round_button" />
+
+        <Button
+            android:id="@+id/sp_bt_my_saved_searches"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/acc_ui_edit_bt"
+            android:gravity="center"
+            android:text="@string/saved_searches"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/pl_orange_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="54dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/colorAccent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/sp_txt_floor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="65dp"
+                android:fontFamily="serif"
+                android:text="@string/floor"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sp_txt_bedrooms" />
+
+
+            <TextView
+                android:id="@+id/sp_txt_maxprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="65dp"
+                android:fontFamily="serif"
+                android:text="@string/max_price"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/sp_in_minPrice"
+                app:layout_constraintTop_toBottomOf="@+id/sp_txt_maxsqm" />
+
+            <EditText
+                android:id="@+id/sp_in_maxsqm"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/sqm_hint"
+                android:inputType="number"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/sp_txt_maxsqm"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sp_txt_maxsqm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="serif"
+                android:text="@string/max_sqm"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/sp_in_minSQM"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sp_txt_minsqm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="serif"
+                android:text="@string/min_sqm"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sp_txt_minprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="65dp"
+                android:fontFamily="serif"
+                android:text="@string/min_price"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sp_txt_minsqm" />
+
+            <TextView
+                android:id="@+id/sp_txt_bedrooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="65dp"
+                android:fontFamily="serif"
+                android:text="@string/beds"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sp_txt_minprice" />
+
+            <TextView
+                android:id="@+id/sp_txt_bathrooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="65dp"
+                android:fontFamily="serif"
+                android:text="@string/baths"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/sp_in_bedrooms"
+                app:layout_constraintTop_toBottomOf="@+id/sp_txt_maxprice" />
+
+
+            <EditText
+                android:id="@+id/sp_in_minSQM"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="25dp"
+                android:ems="10"
+                android:hint="@string/sqm_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                app:layout_constraintStart_toEndOf="@+id/sp_txt_minsqm"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/sp_in_minPrice"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/price_hint"
+                android:inputType="number"
+                app:layout_constraintStart_toEndOf="@+id/sp_txt_minprice"
+                app:layout_constraintTop_toBottomOf="@+id/sp_in_minSQM"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/sp_in_maxPrice"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/price_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                app:layout_constraintStart_toEndOf="@+id/sp_txt_maxprice"
+                app:layout_constraintTop_toBottomOf="@+id/sp_in_maxsqm" />
+
+            <EditText
+                android:id="@+id/sp_in_minFloor"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/floor_hint"
+                android:inputType="number"
+                app:layout_constraintStart_toEndOf="@+id/sp_txt_floor"
+                app:layout_constraintTop_toBottomOf="@+id/sp_in_bedrooms"
+                android:importantForAutofill="no" />
+
+            <CheckBox
+                android:id="@+id/checkBoxHeating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:fontFamily="@font/petrona"
+                android:text="@string/heating"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.112"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sp_in_minFloor" />
+
+            <EditText
+                android:id="@+id/sp_in_bedrooms"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/beds_hint"
+                android:inputType="number"
+                app:layout_constraintStart_toEndOf="@+id/sp_txt_bedrooms"
+                app:layout_constraintTop_toBottomOf="@+id/sp_in_minPrice"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/sp_in_bathrooms"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/baths_hints"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                app:layout_constraintStart_toEndOf="@+id/sp_txt_bathrooms"
+                app:layout_constraintTop_toBottomOf="@+id/sp_in_maxPrice" />
+
+            <Spinner
+                android:id="@+id/dropdownLocation"
+                android:layout_width="150dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="52dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sp_txt_bathrooms" />
+
+            <Button
+                android:id="@+id/sp_bt_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:background="@drawable/acc_ui_edit_bt"
+                android:backgroundTint="@color/colorAccent"
+                android:text="@string/search"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dropdownLocation" />
+
+            <Button
+                android:id="@+id/sp_bt_save_this_search"
+                android:layout_width="202dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/acc_ui_edit_bt"
+                android:text="@string/save_this_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sp_bt_search" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

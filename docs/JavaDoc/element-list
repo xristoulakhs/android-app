@@ -1,0 +1,17 @@
+com.example.homefinderz.main
+com.example.homefinderz.model
+com.example.homefinderz.view.AcceptedListings
+com.example.homefinderz.view.Account
+com.example.homefinderz.view.accountUI
+com.example.homefinderz.view.dao
+com.example.homefinderz.view.Listing
+com.example.homefinderz.view.login
+com.example.homefinderz.view.modifyAccount
+com.example.homefinderz.view.modifyListing
+com.example.homefinderz.view.publishListing
+com.example.homefinderz.view.SavedSearches
+com.example.homefinderz.view.search
+com.example.homefinderz.view.SearchHistory
+com.example.homefinderz.view.signUp
+com.example.homefinderz.view.ValidateMail
+com.example.homefinderz.view.ViewListing

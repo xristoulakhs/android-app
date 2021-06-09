@@ -1,0 +1,335 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ModifyAccountActivity</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.homefinderz.view.modifyAccount</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ModifyAccountActivity (com.example.homefinderz.view.modifyAccount)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ModifyAccountActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 34)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ModifyAccountActivity$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ModifyAccountActivity$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ModifyAccountActivity$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ModifyAccountActivity$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 19)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 43)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.homefinderz.view.modifyAccount;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import androidx.activity.result.ActivityResult;
+<i>4</i>&nbsp;import androidx.activity.result.ActivityResultCallback;
+<i>5</i>&nbsp;import androidx.activity.result.ActivityResultLauncher;
+<i>6</i>&nbsp;import androidx.activity.result.contract.ActivityResultContracts;
+<i>7</i>&nbsp;import androidx.appcompat.app.AppCompatActivity;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import android.app.Activity;
+<i>10</i>&nbsp;import android.app.AlertDialog;
+<i>11</i>&nbsp;import android.content.Intent;
+<i>12</i>&nbsp;import android.os.Bundle;
+<i>13</i>&nbsp;import android.view.View;
+<i>14</i>&nbsp;import android.widget.Button;
+<i>15</i>&nbsp;import android.widget.EditText;
+<i>16</i>&nbsp;import android.widget.Toast;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;import com.example.homefinderz.R;
+<i>19</i>&nbsp;import com.example.homefinderz.view.Account.AccountView;
+<i>20</i>&nbsp;import com.example.homefinderz.view.ValidateMail.ValidateMailActivity;
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;public class ModifyAccountActivity extends AppCompatActivity implements AccountView {</b>
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    private EditText email;
+<i>25</i>&nbsp;    private EditText firstName;
+<i>26</i>&nbsp;    private EditText lastName;
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    private ActivityResultLauncher&lt;Intent&gt; activityResultLauncher;
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    ModifyAccountPresenter presenter;
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    @Override
+<i>33</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>34</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<i>35</i>&nbsp;
+<b class="nc"><i>36</i>&nbsp;        activityResultLauncher = registerForActivityResult(</b>
+<i>37</i>&nbsp;                new ActivityResultContracts.StartActivityForResult(),
+<b class="nc"><i>38</i>&nbsp;                new ActivityResultCallback&lt;ActivityResult&gt;() {</b>
+<i>39</i>&nbsp;                    @Override
+<i>40</i>&nbsp;                    public void onActivityResult(ActivityResult result) {
+<b class="nc"><i>41</i>&nbsp;                        if(result.getResultCode() == Activity.RESULT_OK) {</b>
+<b class="nc"><i>42</i>&nbsp;                            presenter.saveChangedEmail(result.getData().getStringExtra(&quot;validated&quot;));</b>
+<i>43</i>&nbsp;                        }
+<i>44</i>&nbsp;                    }
+<i>45</i>&nbsp;                });
+<i>46</i>&nbsp;
+<b class="nc"><i>47</i>&nbsp;        setContentView(R.layout.activity_modify_account);</b>
+<i>48</i>&nbsp;
+<b class="nc"><i>49</i>&nbsp;        Intent intent = getIntent();</b>
+<b class="nc"><i>50</i>&nbsp;        presenter = new ModifyAccountPresenter(this);</b>
+<b class="nc"><i>51</i>&nbsp;        presenter.setAccountLoggedIn(intent.getIntExtra(&quot;accountID&quot;, -1));</b>
+<i>52</i>&nbsp;
+<b class="nc"><i>53</i>&nbsp;        email     = (EditText) findViewById(R.id.modifyEmail);</b>
+<b class="nc"><i>54</i>&nbsp;        firstName = (EditText) findViewById(R.id.modifyFirstName);</b>
+<b class="nc"><i>55</i>&nbsp;        lastName  = (EditText) findViewById(R.id.modifyLastName);</b>
+<i>56</i>&nbsp;
+<b class="nc"><i>57</i>&nbsp;        email.setHint(presenter.getUserEmail());</b>
+<b class="nc"><i>58</i>&nbsp;        firstName.setHint(presenter.getUserFirstName());</b>
+<b class="nc"><i>59</i>&nbsp;        lastName.setHint(presenter.getUserLastName());</b>
+<i>60</i>&nbsp;
+<b class="nc"><i>61</i>&nbsp;        Button btnSave   = (Button)findViewById(R.id.btnSaveChanges);</b>
+<b class="nc"><i>62</i>&nbsp;        Button btnCancel = (Button)findViewById(R.id.btnCancelModify);</b>
+<b class="nc"><i>63</i>&nbsp;        Button btnDelete = (Button)findViewById(R.id.btmDeleteAccount);</b>
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;
+<b class="nc"><i>66</i>&nbsp;        btnSave.setOnClickListener(new View.OnClickListener() {</b>
+<i>67</i>&nbsp;            @Override
+<i>68</i>&nbsp;            public void onClick(View view) {
+<b class="nc"><i>69</i>&nbsp;                presenter.saveChanges();</b>
+<i>70</i>&nbsp;            }
+<i>71</i>&nbsp;        });
+<b class="nc"><i>72</i>&nbsp;        btnDelete.setOnClickListener(new View.OnClickListener() {</b>
+<i>73</i>&nbsp;            @Override
+<i>74</i>&nbsp;            public void onClick(View view) {
+<b class="nc"><i>75</i>&nbsp;                presenter.deleteAccount();</b>
+<i>76</i>&nbsp;            }
+<i>77</i>&nbsp;        });
+<b class="nc"><i>78</i>&nbsp;        btnCancel.setOnClickListener(new View.OnClickListener() {</b>
+<i>79</i>&nbsp;            @Override
+<i>80</i>&nbsp;            public void onClick(View view) {
+<b class="nc"><i>81</i>&nbsp;                finish();</b>
+<i>82</i>&nbsp;            }
+<i>83</i>&nbsp;        });
+<i>84</i>&nbsp;    }
+<i>85</i>&nbsp;
+<i>86</i>&nbsp;    @Override
+<i>87</i>&nbsp;    public void showErrorMessage(String message) {
+<b class="nc"><i>88</i>&nbsp;        Toast.makeText(getApplicationContext(),&quot;Error! &quot; + message, Toast.LENGTH_SHORT).show();</b>
+<i>89</i>&nbsp;    }
+<i>90</i>&nbsp;
+<i>91</i>&nbsp;    @Override
+<i>92</i>&nbsp;    public void showSuccessMessage() {
+<b class="nc"><i>93</i>&nbsp;        new AlertDialog.Builder(ModifyAccountActivity.this)</b>
+<b class="nc"><i>94</i>&nbsp;                .setCancelable(true)</b>
+<b class="nc"><i>95</i>&nbsp;                .setTitle(&quot;Success!&quot;)</b>
+<b class="nc"><i>96</i>&nbsp;                .setMessage(&quot;Created account successfully&quot;)</b>
+<b class="nc"><i>97</i>&nbsp;                        .setPositiveButton(R.string.ok, null).create().show();</b>
+<i>98</i>&nbsp;    }
+<i>99</i>&nbsp;
+<i>100</i>&nbsp;    public String getEmail() {
+<b class="nc"><i>101</i>&nbsp;        return ((EditText)findViewById(R.id.modifyEmail)).getText().toString();</b>
+<i>102</i>&nbsp;    }
+<i>103</i>&nbsp;
+<i>104</i>&nbsp;    @Override
+<i>105</i>&nbsp;    public String getPass() {
+<b class="nc"><i>106</i>&nbsp;        return ((EditText)findViewById(R.id.modifyPassword)).getText().toString();</b>
+<i>107</i>&nbsp;    }
+<i>108</i>&nbsp;
+<i>109</i>&nbsp;    @Override
+<i>110</i>&nbsp;    public String getPassConfirm() {
+<b class="nc"><i>111</i>&nbsp;        return ((EditText)findViewById(R.id.modifyPasswordConfirm)).getText().toString();</b>
+<i>112</i>&nbsp;    }
+<i>113</i>&nbsp;
+<i>114</i>&nbsp;    @Override
+<i>115</i>&nbsp;    public String getFirstName() {
+<b class="nc"><i>116</i>&nbsp;        return ((EditText)findViewById(R.id.modifyFirstName)).getText().toString();</b>
+<i>117</i>&nbsp;    }
+<i>118</i>&nbsp;
+<i>119</i>&nbsp;    @Override
+<i>120</i>&nbsp;    public String getLastName() {
+<b class="nc"><i>121</i>&nbsp;        return ((EditText)findViewById(R.id.modifyLastName)).getText().toString();</b>
+<i>122</i>&nbsp;    }
+<i>123</i>&nbsp;
+<i>124</i>&nbsp;    @Override
+<i>125</i>&nbsp;    public void setEmail(String email) {
+<i>126</i>&nbsp;        //stub
+<i>127</i>&nbsp;    }
+<i>128</i>&nbsp;
+<i>129</i>&nbsp;    @Override
+<i>130</i>&nbsp;    public void setPass(String pass) {
+<i>131</i>&nbsp;        //stub
+<i>132</i>&nbsp;    }
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;    @Override
+<i>135</i>&nbsp;    public void setPassConfirm(String pass) {
+<i>136</i>&nbsp;        //stub
+<i>137</i>&nbsp;    }
+<i>138</i>&nbsp;
+<i>139</i>&nbsp;    @Override
+<i>140</i>&nbsp;    public void setFirstName(String name) {
+<i>141</i>&nbsp;        //stub
+<i>142</i>&nbsp;
+<i>143</i>&nbsp;    }
+<i>144</i>&nbsp;
+<i>145</i>&nbsp;    @Override
+<i>146</i>&nbsp;    public void setLastName(String name) {
+<i>147</i>&nbsp;        //stub
+<i>148</i>&nbsp;    }
+<i>149</i>&nbsp;
+<i>150</i>&nbsp;    /**
+<i>151</i>&nbsp;     * This method is used to check the validity of the user&#39;s email address
+<i>152</i>&nbsp;     * @param email the email to be checked
+<i>153</i>&nbsp;     */
+<i>154</i>&nbsp;    @Override
+<i>155</i>&nbsp;    public void validateMail(String email) {
+<b class="nc"><i>156</i>&nbsp;        Intent intent = new Intent(this, ValidateMailActivity.class);</b>
+<b class="nc"><i>157</i>&nbsp;        intent.putExtra(&quot;userEmail&quot;, email);</b>
+<b class="nc"><i>158</i>&nbsp;        activityResultLauncher.launch(intent);</b>
+<i>159</i>&nbsp;    }
+<i>160</i>&nbsp;
+<i>161</i>&nbsp;    /**
+<i>162</i>&nbsp;     * Method the presenter can use to end the view
+<i>163</i>&nbsp;     */
+<i>164</i>&nbsp;    @Override
+<i>165</i>&nbsp;    public void endView() {
+<b class="nc"><i>166</i>&nbsp;        finish();</b>
+<i>167</i>&nbsp;    }
+<i>168</i>&nbsp;
+<i>169</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-06-08 21:04</div>
+</div>
+</body>
+</html>

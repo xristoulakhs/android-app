@@ -1,0 +1,109 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ArchivedSearch</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.homefinderz.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ArchivedSearch (com.example.homefinderz.main)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ArchivedSearch</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (5/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.homefinderz.main;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.os.Build;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import androidx.annotation.RequiresApi;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.time.LocalDateTime;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;public class ArchivedSearch extends Search{
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    private LocalDateTime searchTime;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    @RequiresApi(api = Build.VERSION_CODES.O)
+<i>15</i>&nbsp;    public ArchivedSearch(Search executedSearch) {
+<b class="fc"><i>16</i>&nbsp;        super(executedSearch.getSearchId(), executedSearch.getMinPrice(), executedSearch.getMaxPrice(),</b>
+<b class="fc"><i>17</i>&nbsp;                executedSearch.getLocation(), executedSearch.getMaxSqm(), executedSearch.getMinSqm(),</b>
+<b class="fc"><i>18</i>&nbsp;                executedSearch.getBedrooms(), executedSearch.getBathrooms(), executedSearch.getFloor(), executedSearch.getHeat());</b>
+<b class="fc"><i>19</i>&nbsp;        this.searchTime = LocalDateTime.now();</b>
+<b class="fc"><i>20</i>&nbsp;    }</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    public LocalDateTime getSearchTime() {
+<b class="nc"><i>23</i>&nbsp;        return searchTime;</b>
+<i>24</i>&nbsp;    }
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-06-08 21:04</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>234</x>
+      <y>441</y>
+      <w>306</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+_Account_
+--
+-account_id: int
+-userName: String
+-userSurname: String
+-email: String
+-password: String
+-premium: boolean
+--
+//+getId(): int
+//+setId(id:int)
+//+getMail(): String
+//+setMail(newEmail:String)
+//+getPass(): String
+//+setPass(newPass:String)
+_+createAccount(id:int,name:String,_
+_surname:String,email:String,pass:String):Account_
++isPremium(): boolean
++makePremiun(): void
++getPublishedListings(): HashMap&lt;Integer, Listing&gt;
++addPublishedListing(accountID:int, lis:Listing): void
+//findByEmail(String)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>81</x>
+      <y>873</y>
+      <w>243</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>_Listing_
+--
+-listing_id: int
+-price: int
+-location: String
+-squareFeet: int
+-bedrooms: int
+-bathrooms: int
+-floor: int
+-heating: bool
+-description: String
+--
+_-createListing(parameter listing): Listing_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>387</x>
+      <y>873</y>
+      <w>198</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>_Search_
+--
+#search_id
+#priceMin: int
+#priceMax: int
+#location: String
+#squareFeetMin: int
+#squareFeetMax: int
+#bedrooms: int
+#bathrooms: int
+#floor: int
+#heating: bool
+//#description: String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>513</x>
+      <y>864</y>
+      <w>27</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>747</x>
+      <y>207</y>
+      <w>207</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>
+_ViewListingPresenter_
+--
+-accountID: int
+-listingID: int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>747</x>
+      <y>0</y>
+      <w>216</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>_ViewListingActivity_
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>675</y>
+      <w>144</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;140.0;110.0;140.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>207</x>
+      <y>675</y>
+      <w>162</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>160.0;10.0;160.0;110.0;10.0;110.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>531</x>
+      <y>585</y>
+      <w>27</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>135</y>
+      <w>27</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>81</y>
+      <w>99</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-()
+m2=&lt;&lt;interface&gt;&gt;
+</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>855</x>
+      <y>81</y>
+      <w>27</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>711</x>
+      <y>423</y>
+      <w>288</w>
+      <h>324</h>
+    </coordinates>
+    <panel_attributes>_AccountDAO_
+--
+_-numofAccounts: int_
+_-searchID: int_
+_-accountID: int_
+_-listingID: int_
+
+--
++add(acc:Account): void
++upgrade(acc:Account): void
++removeAccount(acc:Account): void
++update(acc:Account): void
++findAccount(email:String): Account
++findAccount(ID:int): Account
++findListing(accID: int, listingID:int): Listing
++findListing(listingID:int): Listing
++findSearch(accID:int, searchID:int): Search
++removeListing(accID:int, lisID): void
++removeApproval(accID:int, lisID): void
++removeSearch(accID:int, searchID): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>837</x>
+      <y>333</y>
+      <w>27</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>531</x>
+      <y>558</y>
+      <w>198</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>954</y>
+      <w>207</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>_ArchivedSearch_
+--
+-date: Date 
+-time: int
+--
++getSearchTime(): LocalDateTime</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>531</x>
+      <y>630</y>
+      <w>216</w>
+      <h>342</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0;130.0;310.0;220.0;310.0;220.0;360.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>990</y>
+      <w>81</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+</diagram>

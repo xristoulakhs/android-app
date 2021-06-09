@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>434</y>
+      <w>238</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+_Account_
+--
+-account_id: int
+-userName: String
+-userSurname: String
+-email: String
+-password: String
+-premium: boolean
+--
+//+getId(): int
+//+setId(id:int)
+//+getMail(): String
+//+setMail(newEmail:String)
+//+getPass(): String
+//+setPass(newPass:String)
+_+createAccount(id:int,name:String,_
+_surname:String,email:String,pass:String):Account_
++isPremium(): boolean
++makePremiun(): void
++getPublishedListings(): HashMap&lt;Integer, Listing&gt;
++addPublishedListing(accountID:int, lis:Listing): void
+//findByEmail(String)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>770</y>
+      <w>189</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>_Listing_
+--
+-listing_id: int
+-price: int
+-location: String
+-squareFeet: int
+-bedrooms: int
+-bathrooms: int
+-floor: int
+-heating: bool
+-description: String
+--
+_-createListing(parameter listing): Listing_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>679</x>
+      <y>770</y>
+      <w>154</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>_Search_
+--
+#search_id
+#priceMin: int
+#priceMax: int
+#location: String
+#squareFeetMin: int
+#squareFeetMax: int
+#bedrooms: int
+#bathrooms: int
+#floor: int
+#heating: bool
+//#description: String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>777</x>
+      <y>763</y>
+      <w>21</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>966</x>
+      <y>231</y>
+      <w>161</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>_ViewListingPresenter_
+--
+-generatedCode: int
+-validationSuccess: boolean
+
+--
++checkCode(): void
++generateCode(): void
++isValidationSuccess(): boolean
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>959</x>
+      <y>21</y>
+      <w>168</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>_ValidateMailActivity_
+--
+-btnConfirm: Button
+-btnSendCode: Button
+-btnCancel: Button
+-userEmail: String
+-intent: Intent
+--
++validated(): void
++sendCode(code:int): void
++showErrorMessage(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>665</x>
+      <y>616</y>
+      <w>112</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;140.0;110.0;140.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>539</x>
+      <y>616</y>
+      <w>126</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>160.0;10.0;160.0;110.0;10.0;110.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>791</x>
+      <y>546</y>
+      <w>21</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>994</x>
+      <y>175</y>
+      <w>21</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>994</x>
+      <y>133</y>
+      <w>77</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-()
+m2=&lt;&lt;interface&gt;&gt;
+</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1043</x>
+      <y>133</y>
+      <w>21</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>931</x>
+      <y>420</y>
+      <w>224</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>_AccountDAO_
+--
+_-numofAccounts: int_
+_-searchID: int_
+_-accountID: int_
+_-listingID: int_
+
+--
++add(acc:Account): void
++upgrade(acc:Account): void
++removeAccount(acc:Account): void
++update(acc:Account): void
++findAccount(email:String): Account
++findAccount(ID:int): Account
++findListing(accID: int, listingID:int): Listing
++findListing(listingID:int): Listing
++findSearch(accID:int, searchID:int): Search
++removeListing(accID:int, lisID): void
++removeApproval(accID:int, lisID): void
++removeSearch(accID:int, searchID): void
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>329</y>
+      <w>21</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>791</x>
+      <y>525</y>
+      <w>154</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>868</x>
+      <y>833</y>
+      <w>161</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>_ArchivedSearch_
+--
+-date: Date 
+-time: int
+--
++getSearchTime(): LocalDateTime</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>791</x>
+      <y>581</y>
+      <w>168</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0;130.0;310.0;220.0;310.0;220.0;360.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>819</x>
+      <y>861</y>
+      <w>63</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+</diagram>

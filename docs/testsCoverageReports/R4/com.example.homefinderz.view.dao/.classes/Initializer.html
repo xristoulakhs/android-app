@@ -1,0 +1,153 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Initializer</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.homefinderz.view.dao</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Initializer (com.example.homefinderz.view.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Initializer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (27/ 27)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.homefinderz.view.dao;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.homefinderz.main.Account;
+<i>4</i>&nbsp;import com.example.homefinderz.main.Listing;
+<i>5</i>&nbsp;
+<b class="fc"><i>6</i>&nbsp;public abstract class Initializer {</b>
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;    protected abstract void eraseData();
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;    public abstract AccountDAO getDAO();
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    public void prepareData() {
+<b class="fc"><i>13</i>&nbsp;        eraseData();</b>
+<i>14</i>&nbsp;
+<b class="fc"><i>15</i>&nbsp;        AccountDAO accountDAO = getDAO();</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;        //Account creation. Creates 8 accounts
+<b class="fc"><i>19</i>&nbsp;        accountDAO.add(Account.createAccount(accountDAO.createAccountID(),</b>
+<i>20</i>&nbsp;                &quot;Jason&quot;, &quot;Kalogerakis&quot;,
+<i>21</i>&nbsp;                &quot;jkalo@gmail.com&quot;, &quot;password&quot;));
+<b class="fc"><i>22</i>&nbsp;        accountDAO.add(Account.createAccount(accountDAO.createAccountID(),</b>
+<i>23</i>&nbsp;                &quot;Chris&quot;, &quot;Manoudakis&quot;,
+<i>24</i>&nbsp;                &quot;chrismano@gmail.com&quot;, &quot;password&quot;));
+<b class="fc"><i>25</i>&nbsp;        accountDAO.add(Account.createAccount(accountDAO.createAccountID(),</b>
+<i>26</i>&nbsp;                &quot;George&quot;, &quot;Vellis&quot;,
+<i>27</i>&nbsp;                &quot;gevelli@gmail.com&quot;, &quot;password&quot;));
+<b class="fc"><i>28</i>&nbsp;        accountDAO.add(Account.createAccount(accountDAO.createAccountID(),</b>
+<i>29</i>&nbsp;                &quot;Amelia&quot;, &quot;Watson&quot;,
+<i>30</i>&nbsp;                &quot;bestdetective@gmail.com&quot;, &quot;password&quot;));
+<b class="fc"><i>31</i>&nbsp;        accountDAO.add(Account.createAccount(accountDAO.createAccountID(),</b>
+<i>32</i>&nbsp;                &quot;Gawr&quot;, &quot;Gura&quot;,
+<i>33</i>&nbsp;                &quot;dwarfshark@gmail.com&quot;, &quot;p&quot;));
+<b class="fc"><i>34</i>&nbsp;        accountDAO.add(Account.createAccount(accountDAO.createAccountID(),</b>
+<i>35</i>&nbsp;                &quot;Mark&quot;, &quot;Grayson&quot;,
+<i>36</i>&nbsp;                &quot;invincible@gmail.com&quot;, &quot;password&quot;));
+<b class="fc"><i>37</i>&nbsp;        accountDAO.add(Account.createAccount(accountDAO.createAccountID(),</b>
+<i>38</i>&nbsp;                &quot;Peter&quot;, &quot;Parker&quot;,
+<i>39</i>&nbsp;                &quot;notaspider@gmail.com&quot;, &quot;password&quot;));
+<b class="fc"><i>40</i>&nbsp;        accountDAO.add(Account.createAccount(accountDAO.createAccountID(),</b>
+<i>41</i>&nbsp;                &quot;Jim&quot;, &quot;Gordon&quot;,
+<i>42</i>&nbsp;                &quot;bestcommissioner@gmail.com&quot;, &quot;password&quot;));
+<b class="fc"><i>43</i>&nbsp;        accountDAO.add(Account.createAccount(accountDAO.createAccountID(),</b>
+<i>44</i>&nbsp;                &quot;Elena&quot;, &quot;Mina&quot;,
+<i>45</i>&nbsp;                &quot;elena@gmail.com&quot;, &quot;123&quot;));
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;        //Upgrading Accounts. Upgrades 3 accounts
+<b class="fc"><i>48</i>&nbsp;        accountDAO.upgrade(accountDAO.findAccount(&quot;dwarfshark@gmail.com&quot;));</b>
+<b class="fc"><i>49</i>&nbsp;        accountDAO.upgrade(accountDAO.findAccount(&quot;notaspider@gmail.com&quot;));</b>
+<b class="fc"><i>50</i>&nbsp;        accountDAO.upgrade(accountDAO.findAccount(&quot;jkalo@gmail.com&quot;));</b>
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;        //Publishing Listings.
+<b class="fc"><i>54</i>&nbsp;        Account publisher = accountDAO.findAccount(&quot;dwarfshark@gmail.com&quot;);</b>
+<b class="fc"><i>55</i>&nbsp;        publisher.addPublishedListing(Listing.createListing(accountDAO.createListingID(), 300, &quot;Athens&quot;, 60, 1,1,1,false, &quot;add description&quot;));</b>
+<b class="fc"><i>56</i>&nbsp;        publisher.addPublishedListing(Listing.createListing(accountDAO.createListingID(), 300, &quot;Athens&quot;, 60, 1,1,1,false, &quot;add description&quot;));</b>
+<b class="fc"><i>57</i>&nbsp;        accountDAO.update(publisher);</b>
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;        //Publish Listing from a different account.
+<b class="fc"><i>60</i>&nbsp;        publisher = accountDAO.findAccount(&quot;chrismano@gmail.com&quot;);</b>
+<b class="fc"><i>61</i>&nbsp;        publisher.addPublishedListing(Listing.createListing(accountDAO.createListingID(), 300, &quot;Athens&quot;, 60, 1,1,1,false, &quot;add description&quot;));</b>
+<b class="fc"><i>62</i>&nbsp;        accountDAO.update(publisher);</b>
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;        //Publish Listing from yet another different account.
+<b class="fc"><i>65</i>&nbsp;        publisher = accountDAO.findAccount(&quot;gevelli@gmail.com&quot;);</b>
+<b class="fc"><i>66</i>&nbsp;        publisher.addPublishedListing(Listing.createListing(accountDAO.createListingID(), 300, &quot;Athens&quot;, 60, 1,1,1,false, &quot;add description&quot;));</b>
+<b class="fc"><i>67</i>&nbsp;        publisher.addPublishedListing(Listing.createListing(accountDAO.createListingID(), 300, &quot;Athens&quot;, 60, 1,1,1,false, &quot;add description&quot;));</b>
+<b class="fc"><i>68</i>&nbsp;        accountDAO.update(publisher);</b>
+<b class="fc"><i>69</i>&nbsp;    }</b>
+<i>70</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-06-08 21:04</div>
+</div>
+</body>
+</html>

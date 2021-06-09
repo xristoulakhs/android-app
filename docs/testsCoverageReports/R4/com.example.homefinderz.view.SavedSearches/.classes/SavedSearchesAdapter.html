@@ -1,0 +1,282 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SavedSearchesAdapter</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.homefinderz.view.SavedSearches</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SavedSearchesAdapter (com.example.homefinderz.view.SavedSearches)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SavedSearchesAdapter</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 20)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SavedSearchesAdapter$SearchesItemViewHolder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 18)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">SavedSearchesAdapter$SearchesItemViewHolder$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">SavedSearchesAdapter$SearchesItemViewHolder$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 18)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 42)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.homefinderz.view.SavedSearches;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Context;
+<i>4</i>&nbsp;import android.view.LayoutInflater;
+<i>5</i>&nbsp;import android.view.View;
+<i>6</i>&nbsp;import android.view.ViewGroup;
+<i>7</i>&nbsp;import android.widget.TextView;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import androidx.annotation.NonNull;
+<i>10</i>&nbsp;import androidx.recyclerview.widget.RecyclerView;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;import com.example.homefinderz.R;
+<i>13</i>&nbsp;import com.example.homefinderz.main.Search;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;import org.jetbrains.annotations.NotNull;
+<i>16</i>&nbsp;import java.util.List;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;public class SavedSearchesAdapter extends RecyclerView.Adapter&lt;SavedSearchesAdapter.SearchesItemViewHolder&gt;{
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    private List&lt;Search&gt; searchesList;
+<i>21</i>&nbsp;    private Search search;
+<i>22</i>&nbsp;    private SavedSearchesView view;
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    public class SearchesItemViewHolder extends RecyclerView.ViewHolder {
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;        private TextView tvID;
+<i>27</i>&nbsp;        private TextView tvMinPrice;
+<i>28</i>&nbsp;        private TextView tvMaxPrice;
+<i>29</i>&nbsp;        private TextView tvMinSQM;
+<i>30</i>&nbsp;        private TextView tvMaxSQM;
+<i>31</i>&nbsp;        private TextView tvLocation;
+<i>32</i>&nbsp;        private TextView tvHeating;
+<i>33</i>&nbsp;
+<b class="nc"><i>34</i>&nbsp;        public SearchesItemViewHolder(@NonNull @NotNull View itemView) {</b>
+<b class="nc"><i>35</i>&nbsp;            super(itemView);</b>
+<i>36</i>&nbsp;
+<b class="nc"><i>37</i>&nbsp;            tvID       = (TextView)itemView.findViewById(R.id.tv_ssi_ID);</b>
+<b class="nc"><i>38</i>&nbsp;            tvMinPrice = (TextView)itemView.findViewById(R.id.tv_ssi_minPrice);</b>
+<b class="nc"><i>39</i>&nbsp;            tvMaxPrice = (TextView)itemView.findViewById(R.id.tv_ssi_maxPrice);</b>
+<b class="nc"><i>40</i>&nbsp;            tvMinSQM   = (TextView)itemView.findViewById(R.id.tv_ssi_minSQM);</b>
+<b class="nc"><i>41</i>&nbsp;            tvMaxSQM   = (TextView)itemView.findViewById(R.id.tv_ssi_maxSQM);</b>
+<b class="nc"><i>42</i>&nbsp;            tvLocation = (TextView)itemView.findViewById(R.id.tv_ssi_Location);</b>
+<b class="nc"><i>43</i>&nbsp;            tvHeating  = (TextView)itemView.findViewById(R.id.tv_ssi_Heating);</b>
+<i>44</i>&nbsp;
+<b class="nc"><i>45</i>&nbsp;            (itemView.findViewById(R.id.btn_ssi_delete)).setOnClickListener(new View.OnClickListener() {</b>
+<i>46</i>&nbsp;                @Override
+<i>47</i>&nbsp;                public void onClick(View view) {
+<b class="nc"><i>48</i>&nbsp;                    deleteSearch(getAdapterPosition());</b>
+<i>49</i>&nbsp;                }
+<i>50</i>&nbsp;            });
+<b class="nc"><i>51</i>&nbsp;            (itemView.findViewById(R.id.btn_ssi_search)).setOnClickListener(new View.OnClickListener() {</b>
+<i>52</i>&nbsp;                @Override
+<i>53</i>&nbsp;                public void onClick(View view) {
+<b class="nc"><i>54</i>&nbsp;                    executeSearch();</b>
+<i>55</i>&nbsp;                }
+<i>56</i>&nbsp;            });
+<i>57</i>&nbsp;        }
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;        public TextView getTvID() {
+<b class="nc"><i>60</i>&nbsp;            return tvID;</b>
+<i>61</i>&nbsp;        }
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;        public TextView getTvMinPrice() {
+<b class="nc"><i>64</i>&nbsp;            return tvMinPrice;</b>
+<i>65</i>&nbsp;        }
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;        public TextView getTvMaxPrice() {
+<b class="nc"><i>68</i>&nbsp;            return tvMaxPrice;</b>
+<i>69</i>&nbsp;        }
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;        public TextView getTvMinSQM() {
+<b class="nc"><i>72</i>&nbsp;            return tvMinSQM;</b>
+<i>73</i>&nbsp;        }
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;        public TextView getTvMaxSQM() {
+<b class="nc"><i>76</i>&nbsp;            return tvMaxSQM;</b>
+<i>77</i>&nbsp;        }
+<i>78</i>&nbsp;
+<i>79</i>&nbsp;        public TextView getTvLocation() {
+<b class="nc"><i>80</i>&nbsp;            return tvLocation;</b>
+<i>81</i>&nbsp;        }
+<i>82</i>&nbsp;
+<i>83</i>&nbsp;        public TextView getTvHeating() {
+<b class="nc"><i>84</i>&nbsp;            return tvHeating;</b>
+<i>85</i>&nbsp;        }
+<i>86</i>&nbsp;    }
+<i>87</i>&nbsp;
+<b class="nc"><i>88</i>&nbsp;    public SavedSearchesAdapter(List&lt;Search&gt; storedSearches, SavedSearchesActivity savedSearchesActivity) {</b>
+<b class="nc"><i>89</i>&nbsp;        this.searchesList = storedSearches;</b>
+<b class="nc"><i>90</i>&nbsp;        this.view = savedSearchesActivity;</b>
+<i>91</i>&nbsp;    }
+<i>92</i>&nbsp;
+<i>93</i>&nbsp;    @NonNull
+<i>94</i>&nbsp;    @NotNull
+<i>95</i>&nbsp;    @Override
+<i>96</i>&nbsp;    public SearchesItemViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+<b class="nc"><i>97</i>&nbsp;        Context context = parent.getContext();</b>
+<b class="nc"><i>98</i>&nbsp;        LayoutInflater inflater = LayoutInflater.from(context);</b>
+<i>99</i>&nbsp;
+<b class="nc"><i>100</i>&nbsp;        View storedSearchesView = inflater.inflate(R.layout.stored_searches_item, parent, false);</b>
+<i>101</i>&nbsp;
+<b class="nc"><i>102</i>&nbsp;        return new SavedSearchesAdapter.SearchesItemViewHolder(storedSearchesView);</b>
+<i>103</i>&nbsp;    }
+<i>104</i>&nbsp;
+<i>105</i>&nbsp;    @Override
+<i>106</i>&nbsp;    public void onBindViewHolder(@NonNull @NotNull SearchesItemViewHolder holder, int position) {
+<b class="nc"><i>107</i>&nbsp;        search = searchesList.get(position);</b>
+<i>108</i>&nbsp;
+<b class="nc"><i>109</i>&nbsp;        holder.getTvID().setText(String.valueOf(search.getSearchId()));</b>
+<b class="nc"><i>110</i>&nbsp;        holder.getTvMinPrice().setText(String.valueOf(search.getMinPrice()));</b>
+<b class="nc"><i>111</i>&nbsp;        holder.getTvMaxPrice().setText(String.valueOf(search.getMaxPrice()));</b>
+<b class="nc"><i>112</i>&nbsp;        holder.getTvMinSQM().setText(String.valueOf(search.getMinSqm()));</b>
+<b class="nc"><i>113</i>&nbsp;        holder.getTvMaxSQM().setText(String.valueOf(search.getMaxSqm()));</b>
+<b class="nc"><i>114</i>&nbsp;        holder.getTvLocation().setText(search.getLocation());</b>
+<b class="nc"><i>115</i>&nbsp;        if (search.getHeat()) {</b>
+<b class="nc"><i>116</i>&nbsp;            holder.getTvHeating().setText(R.string.ssi_heating);</b>
+<i>117</i>&nbsp;        }
+<i>118</i>&nbsp;        else {
+<b class="nc"><i>119</i>&nbsp;            holder.getTvHeating().setText(R.string.ssi_noHeating);</b>
+<i>120</i>&nbsp;        }
+<i>121</i>&nbsp;
+<i>122</i>&nbsp;    }
+<i>123</i>&nbsp;
+<i>124</i>&nbsp;    @Override
+<i>125</i>&nbsp;    public int getItemCount() {
+<b class="nc"><i>126</i>&nbsp;        return searchesList.size();</b>
+<i>127</i>&nbsp;    }
+<i>128</i>&nbsp;
+<i>129</i>&nbsp;    protected void executeSearch() {
+<b class="nc"><i>130</i>&nbsp;        view.search(search.getSearchId());</b>
+<i>131</i>&nbsp;    }
+<i>132</i>&nbsp;    protected void deleteSearch(int adapterPosition) {
+<b class="nc"><i>133</i>&nbsp;        view.deleteSearch(search.getSearchId(), adapterPosition);</b>
+<i>134</i>&nbsp;    }
+<i>135</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-06-08 21:04</div>
+</div>
+</body>
+</html>

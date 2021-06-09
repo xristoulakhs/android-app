@@ -1,0 +1,211 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Listing</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.homefinderz.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Listing (com.example.homefinderz.main)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Listing</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.5%
+  </span>
+  <span class="absValue">
+    (19/ 21)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    93.5%
+  </span>
+  <span class="absValue">
+    (43/ 46)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.homefinderz.main;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;public class Listing {
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;    private int id;
+<i>6</i>&nbsp;    private int price;
+<i>7</i>&nbsp;    private String location;
+<i>8</i>&nbsp;    private int squareMeters;
+<i>9</i>&nbsp;    private int bedrooms;
+<i>10</i>&nbsp;    private int bathrooms;
+<i>11</i>&nbsp;    private int floor;
+<i>12</i>&nbsp;    private boolean heating;
+<i>13</i>&nbsp;    private String description;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    private String image;
+<i>16</i>&nbsp;
+<b class="fc"><i>17</i>&nbsp;    public Listing(int id, int price, String location, int squareMeters, int bedrooms, int bathrooms, int floor, boolean heating, String description) {</b>
+<b class="fc"><i>18</i>&nbsp;        this.id = id;</b>
+<b class="fc"><i>19</i>&nbsp;        this.price = price;</b>
+<b class="fc"><i>20</i>&nbsp;        this.location = location;</b>
+<b class="fc"><i>21</i>&nbsp;        this.squareMeters = squareMeters;</b>
+<b class="fc"><i>22</i>&nbsp;        this.bedrooms = bedrooms;</b>
+<b class="fc"><i>23</i>&nbsp;        this.bathrooms = bathrooms;</b>
+<b class="fc"><i>24</i>&nbsp;        this.floor = floor;</b>
+<b class="fc"><i>25</i>&nbsp;        this.heating = heating;</b>
+<b class="fc"><i>26</i>&nbsp;        this.description = description;</b>
+<b class="fc"><i>27</i>&nbsp;    }</b>
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    /**
+<i>30</i>&nbsp;     * This method is about checking that the listing
+<i>31</i>&nbsp;     * which is about to be created has right values. After it pass the chech at the if statement
+<i>32</i>&nbsp;     * it creates a Listing-type variable and return it or null else.
+<i>33</i>&nbsp;     * @param id
+<i>34</i>&nbsp;     * @param price
+<i>35</i>&nbsp;     * @param location
+<i>36</i>&nbsp;     * @param squareMeters
+<i>37</i>&nbsp;     * @param bedrooms
+<i>38</i>&nbsp;     * @param bathrooms
+<i>39</i>&nbsp;     * @param floor
+<i>40</i>&nbsp;     * @param heating
+<i>41</i>&nbsp;     * @param description
+<i>42</i>&nbsp;     * @return
+<i>43</i>&nbsp;     */
+<i>44</i>&nbsp;    public static Listing createListing(int id, int price, String location, int squareMeters, int bedrooms, int bathrooms, int floor, boolean heating, String description){
+<i>45</i>&nbsp;
+<b class="fc"><i>46</i>&nbsp;            if(price&gt;0 &amp;&amp; squareMeters&gt;0 &amp;&amp; bedrooms&gt;0 &amp;&amp; bathrooms&gt;0){   //also check if floor is number?</b>
+<b class="fc"><i>47</i>&nbsp;                return new Listing(id, price, location, squareMeters, bedrooms, bathrooms, floor, heating, description);</b>
+<i>48</i>&nbsp;            }
+<b class="fc"><i>49</i>&nbsp;            return null;</b>
+<i>50</i>&nbsp;    }
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;
+<b class="fc"><i>53</i>&nbsp;    public int getId() { return id; }</b>
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;    public int getPrice() {
+<b class="fc"><i>56</i>&nbsp;        return price;</b>
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;    public void setPrice(int new_price) {
+<b class="fc"><i>60</i>&nbsp;        if(new_price&gt;0) {</b>
+<b class="fc"><i>61</i>&nbsp;            this.price = new_price;</b>
+<i>62</i>&nbsp;        }
+<b class="fc"><i>63</i>&nbsp;    }</b>
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;    public String getLocation() {
+<b class="fc"><i>66</i>&nbsp;        return location;</b>
+<i>67</i>&nbsp;    }
+<i>68</i>&nbsp;    public void setLocation(String location) {
+<b class="fc"><i>69</i>&nbsp;        this.location = location;</b>
+<b class="fc"><i>70</i>&nbsp;    }</b>
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;    public int getSqm() {
+<b class="fc"><i>73</i>&nbsp;        return squareMeters;</b>
+<i>74</i>&nbsp;    }
+<i>75</i>&nbsp;    public void setSqm(int new_squareMeters) {
+<b class="fc"><i>76</i>&nbsp;        if(new_squareMeters&gt;0) {</b>
+<b class="fc"><i>77</i>&nbsp;            this.squareMeters = new_squareMeters;</b>
+<i>78</i>&nbsp;        }
+<b class="fc"><i>79</i>&nbsp;    }</b>
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;    public int getBedrooms() {
+<b class="fc"><i>82</i>&nbsp;        return bedrooms;</b>
+<i>83</i>&nbsp;    }
+<i>84</i>&nbsp;    public void setBedrooms(int new_bedrooms) {
+<b class="fc"><i>85</i>&nbsp;        if(new_bedrooms&gt;0){</b>
+<b class="fc"><i>86</i>&nbsp;            this.bedrooms = new_bedrooms;</b>
+<i>87</i>&nbsp;        }
+<b class="fc"><i>88</i>&nbsp;    }</b>
+<i>89</i>&nbsp;
+<i>90</i>&nbsp;    public int getBathrooms() {
+<b class="fc"><i>91</i>&nbsp;        return bathrooms;</b>
+<i>92</i>&nbsp;    }
+<i>93</i>&nbsp;    public void setBathrooms(int new_bathrooms) {
+<b class="fc"><i>94</i>&nbsp;        if(new_bathrooms&gt;0){</b>
+<b class="fc"><i>95</i>&nbsp;            this.bathrooms = new_bathrooms;</b>
+<i>96</i>&nbsp;        }
+<b class="fc"><i>97</i>&nbsp;    }</b>
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;    public int getFloor() {
+<b class="fc"><i>100</i>&nbsp;        return floor;</b>
+<i>101</i>&nbsp;    }
+<i>102</i>&nbsp;    public void setFloor(int floor) {
+<b class="fc"><i>103</i>&nbsp;        this.floor = floor;</b>
+<b class="fc"><i>104</i>&nbsp;    }</b>
+<i>105</i>&nbsp;
+<i>106</i>&nbsp;    public boolean getHeating() {
+<b class="fc"><i>107</i>&nbsp;        return heating;</b>
+<i>108</i>&nbsp;    }
+<i>109</i>&nbsp;    public void setHeating(boolean heating) {
+<b class="fc"><i>110</i>&nbsp;        this.heating = heating;</b>
+<b class="fc"><i>111</i>&nbsp;    }</b>
+<i>112</i>&nbsp;
+<i>113</i>&nbsp;    public String getDescription() {
+<b class="fc"><i>114</i>&nbsp;        return description;</b>
+<i>115</i>&nbsp;    }
+<i>116</i>&nbsp;    public void setDescription(String description) {
+<b class="fc"><i>117</i>&nbsp;        this.description = description;</b>
+<b class="fc"><i>118</i>&nbsp;    }</b>
+<i>119</i>&nbsp;
+<i>120</i>&nbsp;    public String getImage() {
+<b class="nc"><i>121</i>&nbsp;        return image;</b>
+<i>122</i>&nbsp;    }
+<i>123</i>&nbsp;
+<i>124</i>&nbsp;    public void setImage(String image) {
+<b class="nc"><i>125</i>&nbsp;        this.image = image;</b>
+<b class="nc"><i>126</i>&nbsp;    }</b>
+<i>127</i>&nbsp;
+<i>128</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-06-08 21:04</div>
+</div>
+</body>
+</html>

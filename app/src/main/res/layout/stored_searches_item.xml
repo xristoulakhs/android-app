@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_color">
+
+    <Button
+        android:id="@+id/btn_ssi_delete"
+        android:layout_width="62dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="60dp"
+        android:background="#D30000"
+        android:text="@string/delete"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ssi_ID" />
+
+    <Button
+        android:id="@+id/btn_ssi_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_ssi_delete" />
+
+    <TextView
+        android:id="@+id/tv_ssi_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_ssi_minPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tv_ssi_ID"
+        app:layout_constraintTop_toTopOf="@+id/tv_ssi_ID" />
+
+    <TextView
+        android:id="@+id/tv_ssi_maxPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/tv_ssi_minPrice"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ssi_minPrice" />
+
+    <TextView
+        android:id="@+id/tv_ssi_minSQM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tv_ssi_minPrice"
+        app:layout_constraintTop_toTopOf="@+id/tv_ssi_minPrice" />
+
+    <TextView
+        android:id="@+id/tv_ssi_maxSQM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/tv_ssi_minSQM"
+        app:layout_constraintTop_toTopOf="@+id/tv_ssi_maxPrice" />
+
+    <TextView
+        android:id="@+id/tv_ssi_Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_ssi_minSQM"
+        app:layout_constraintTop_toTopOf="@+id/tv_ssi_minSQM" />
+
+    <TextView
+        android:id="@+id/tv_ssi_Heating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/tv_ssi_Location"
+        app:layout_constraintTop_toTopOf="@+id/tv_ssi_maxSQM" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
